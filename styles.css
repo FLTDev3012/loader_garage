@@ -1,0 +1,204 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+height: 100vh;
+}
+
+.accueil {
+    height: 100%;
+    width: 100%;
+    background: url(/pexels-photo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.accueil h1 {
+    font-size: 120px;
+    margin-bottom: 450px;
+}
+
+/* loader important */
+
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #dadbd3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.fondu-out {
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+
+/* loader garage */
+
+.scan
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  animation: animateColor 2s linear infinite;
+}
+
+
+.scan .face {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: url(images/garagegood.png);
+  background-size: 500px;
+  margin: 50px 0;
+}
+@keyframes animateColor
+{
+  0%
+  {
+    filter: grayscale(0%);
+  }
+  50%
+  {
+    filter: grayscale(100%);
+  }
+  100%
+  {
+    filter: grayscale(0%);
+  }
+}
+
+.scan .face::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(images/garageblanc.png) no-repeat;
+  background-size: 500px;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate
+{
+  0%,100%
+  {
+    height: 0%;
+  }
+  50%
+  {
+    height: 105%;
+  }
+}
+.scan .face::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: #c5c7bb;
+  border-radius: 8px;
+  filter: drop-shadow(0 0 20px #c5c7bb) drop-shadow(0 0 60px #c5c7bb);
+  animation: animate_line 4s ease-in-out infinite;
+}
+@keyframes animate_line
+{
+  0%,100%
+  {
+    top: -5%;
+  }
+  50%
+  {
+    top: 105%;
+  }
+}
+.scan h3
+{
+  text-transform: uppercase;
+  color: #f8f8f8;
+  font-size: 2em;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  filter: drop-shadow(0 0 20px #c5c7bb) drop-shadow(0 0 60px #c5c7bb);
+  animation: animate_text 0.5s steps(1) infinite;
+}
+@keyframes animate_text
+{
+  0%,100%
+  {
+    opacity: 0;
+  }
+  50%
+  {
+    opacity: 1;
+  }
+}
+
+.scan .face .dots
+{
+  position: absolute;
+  inset: 0;
+}
+.scan .face .dots::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background: url(images/garage_littlelinegood.png);
+  /* translate: -6px -4px; */
+  background-size: 500px;
+  animation: face_lines 4s ease-in-out infinite;
+}
+@keyframes face_lines
+{
+  0%,25%,100%
+  {
+    height: 0%;
+  }
+  50%
+  {
+    height: 100%;
+  }
+}
+.scan .face .dots::after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background: url(images/garage_whitepointsombre.png);
+  /* translate: -6px -4px; */
+  background-size: 500px;
+  animation: face_points 4s ease-in-out infinite;
+}
+@keyframes face_points
+{
+  0%,100%
+  {
+    height: 0%;
+  }
+  50%
+  {
+    height: 100%;
+  }
+}
